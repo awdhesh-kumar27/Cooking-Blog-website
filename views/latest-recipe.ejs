@@ -1,0 +1,25 @@
+
+<h1 class="pb-4">Latest Recipes</h1>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Latest Recipes</li>
+    </ol>
+  </nav>
+
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <% if(latest_recipe.length > 0) { %>
+        <% latest_recipe.forEach(function(recipe,index){ %>
+    <a href="/recipe/<%= recipe.id %>" class="col text-center category__link">
+        <div class="category__img category__img--large shadow">
+            <img src="/uploads/<%= recipe.image %>" alt="<%= recipe.name %>" loading="lazy">
+        </div>
+        <div class="pt-1">
+            <%= recipe.name %>
+        </div>
+    </a>
+    <% }) %> 
+    <% } %>
+
+ </div>
